@@ -1,0 +1,5 @@
+<h1>Modifier l'article : <%= @post.title %></h1>
+
+<%= render "form", post: @post %>
+
+<%= link_to "Retour à l'article", blog_post_path(@post.blog, @post) %>
