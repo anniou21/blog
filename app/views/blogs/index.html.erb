@@ -1,9 +1,12 @@
-<h1>Blogs</h1>
+<div class="blog-list">
+  <h1>Blogs</h1>
+  <p>blogs#index</p>
 
-<% @blogs.each do |blog| %>
-  <div>
-    <h2><%= link_to blog.title, blog_path(blog) %></h2>
-    <p><%= blog.description %></p>
-  </div>
-  <hr>
-<% end %>
+  <% @blogs.each do |blog| %>
+    <div class="blog-title">
+      <h2><%= link_to blog.title, blog_path(blog) %></h2>
+      <p><%= blog.description %></p>
+    </div>
+    <hr>
+  <% end %>
+</div>
