@@ -9,4 +9,19 @@ class BlogsController < ApplicationController
     @posts = @blog.posts.order(published_at: :desc)
   end
 
+  def new
+    
+  end
+
+  def create
+    raise
+  end
+
+  def update
+    
+  end
+
+  def edit
+    
+  end
 end

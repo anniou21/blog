@@ -7,6 +7,17 @@ class PostsController < ApplicationController
     @posts = @blog.posts.order(published_at: :desc)
   end
 
+  def create
+  @blog = Blog.new(blog_params)
+
+  if @blog.save
+    redirect_to @blog, notice: "Blog créé avec succès."
+  else
+    render :new, status: :unprocessable_entity
+  end
+
+
+
   # GET /posts/:id
   def show
     @comments = @post.comments.order(created_at: :desc)
