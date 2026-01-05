@@ -2,14 +2,14 @@
 
 <p><%= simple_format(@post.body) %></p>
 
-<% if @post.published_at.present? %>
-  <p><em>Publié le <%= l(@post.published_at, format: :long) rescue @post.published_at %></em></p>
+<% if @post.created_at.present? %>
+  <p><em>Publié le <%= l(@post.created_at, format: :long) rescue @post.created_at %></em></p>
 <% end %>
 
 <hr>
 
 <div>
-  <%= link_to "Modifier cet article", edit_post_path(@post) %> |
+  <%= link_to "Modifier cet article", edit_blog_post_path(@post) %> |
   <%= link_to "Retour aux articles", blog_posts_path(@post.blog) %> |
   <%= link_to "Retour au blog", blog_path(@post.blog) %>
 </div>

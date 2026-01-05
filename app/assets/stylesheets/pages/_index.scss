@@ -1,10 +1,18 @@
 // Import page-specific CSS files here.
 @import "home";
-.blog-list {
-    text-align: center;
+
+.blog {
+  .blog-list {
+  text-align: center;
   margin-bottom: 20px;
+  }
+
+  h1 {
+    color: #00a400;
+  }
 }
 
-.blog-title {
-    color: #00a400;
+.blog h1 {
+  
+}
 }

@@ -4,8 +4,8 @@
 
   <% @blogs.each do |blog| %>
     <div class="blog-title">
-      <h2><%= link_to blog.title, blog_path(blog) %></h2>
-      <p><%= blog.description %></p>
+      <h2><%= link_to blog.name, blog_path(blog) %></h2>
+      
     </div>
     <hr>
   <% end %>

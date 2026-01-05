@@ -4,16 +4,17 @@ class PostsController < ApplicationController
 
   # GET /blogs/:blog_id/posts
   def index
-    @posts = @blog.posts.order(published_at: :desc)
+    @posts = @blog.posts.order(created_at: :desc)
   end
 
   def create
-  @blog = Blog.new(blog_params)
+    @blog = Blog.new(blog_params)
 
-  if @blog.save
-    redirect_to @blog, notice: "Blog créé avec succès."
-  else
-    render :new, status: :unprocessable_entity
+    if @blog.save
+      redirect_to @blog, notice: "Blog créé avec succès."
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
 
@@ -70,6 +71,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :published_at)
+    params.require(:post).permit(:title, :body, :created_at)
   end
 end

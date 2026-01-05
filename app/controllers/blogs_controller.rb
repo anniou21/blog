@@ -1,12 +1,13 @@
 class BlogsController < ApplicationController
-
+  before_action :authentificate
+  layout 'application2'
   def index
     @blogs = Blog.all
   end
 
   def show
     @blog = Blog.find(params[:id])
-    @posts = @blog.posts.order(published_at: :desc)
+    @posts = @blog.posts.order(created_at: :desc)
   end
 
   def new
@@ -23,5 +24,9 @@ class BlogsController < ApplicationController
 
   def edit
     
+  end
+
+  def authentificate
+    true
   end
 end
